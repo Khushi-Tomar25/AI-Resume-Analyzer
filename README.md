@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 🚀 ResumeAI: AI-Powered Resume Analyzer & ATS Optimizer
 
 [![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://python.org)
@@ -33,7 +33,8 @@ An enterprise-grade, student-friendly web application designed to help job seeke
 ---
 
 ## 📖 Project Introduction
-
+Live Link: https://ai-resume-analyzer-syzxfzpohfblxfzxuoe9yo.streamlit.app/
+ 
 **ResumeAI** is an intelligent resume auditing and optimization platform. Combining Natural Language Processing (NLP), TF-IDF semantic vector similarity, regular expression parsing engines, embedded SQLite persistence, and Anthropic's Claude 3.5 Sonnet Large Language Model, ResumeAI demystifies the automated screening algorithms used by modern recruitment platforms.
 
 ---
@@ -184,7 +185,7 @@ The project is fully tested on **Windows 10 and Windows 11** using PowerShell or
 
 ### Step 1: Open your terminal inside the project directory
 ```powershell
-cd c:\Users\prash\OneDrive\Documents\Desktop\projects\Ai_Resume
+cd c:\Users\***\OneDrive\Documents\Desktop\projects\Ai_Resume
 ```
 
 ### Step 2: Create a virtual environment
@@ -328,15 +329,16 @@ The table schema, SQL queries (`INSERT`, `SELECT`, `DELETE`), and `user_id` mult
 
 ---
 
-## 🔒 Security & Privacy Practices
+## 🔒 Security & Privacy Practice
 
-- **Zero Involuntary Cloud Storage**: Resume files are processed in-memory during the Streamlit session and are **never uploaded to external cloud storage**.
-- **Local SQLite Database**: Historical records are kept exclusively on the local machine hosting the app in `data/resume_analyzer.db`.
-- **API Secret Masking**: Anthropic API credentials are never logged, never saved in git, and masked in the UI (`sk-ant...xxxx`).
-- **Input Sanitization**: File magic bytes are validated (`%PDF-`, `PK\x03\x04`), file sizes are capped at 10MB, and content is never executed as code.
-- **AI Transparency**: The application clearly marks when data is processed locally vs. when it is sent to Anthropic's Claude API.
+The application uses SQLite for analysis history.
+In local development, history is stored on the local machine.
+In the deployed Streamlit environment, the database is stored
+on the application host and may not persist across restarts.
 
----
+Resume text is sent to Anthropic Claude when AI-powered
+analysis is requested. Users should avoid uploading
+documents containing information they do not wish to share.
 
 ## ⚠️ Limitations & Future Scope
 
@@ -365,9 +367,3 @@ This project was built to demonstrate proficiency in:
 - **Enterprise Document Publishing**: ReportLab, Custom Canvas Two-Pass Page Numbering.
 
 ---
-
-## 📄 License
-This project is licensed under the MIT License.
-=======
-# AI-Resume-Analyzer
->>>>>>> 8fd91b8a604f23222ea0498ab3d7451f4c0f5074
