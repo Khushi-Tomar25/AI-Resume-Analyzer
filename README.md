@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 ResumeAI: AI-Powered Resume Analyzer & ATS Optimizer
 
 [![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://python.org)
@@ -367,3 +368,6 @@ This project was built to demonstrate proficiency in:
 
 ## 📄 License
 This project is licensed under the MIT License.
+=======
+# AI-Resume-Analyzer
+>>>>>>> 8fd91b8a604f23222ea0498ab3d7451f4c0f5074
