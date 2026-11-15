@@ -1,0 +1,43 @@
+Alex Morgan
+alex.morgan@example.com | +1 (555) 234-5678 | San Francisco, CA
+https://linkedin.com/in/alexmorgan-dev | https://github.com/alexmorgan-tech
+
+PROFESSIONAL SUMMARY
+Results-driven Full Stack Software Engineer with 4+ years of experience designing scalable web applications, RESTful microservices, and automated CI/CD pipelines. Proven record of optimizing system performance and improving developer productivity across cross-functional teams.
+
+CORE TECHNICAL SKILLS
+- Programming Languages: Python, JavaScript, TypeScript, SQL, HTML5, CSS3
+- Web Frameworks & Libraries: Django, FastAPI, React, Node.js, Express, Next.js, Tailwind CSS
+- Databases & Storage: PostgreSQL, Redis, MongoDB, SQLite
+- Cloud & DevOps: AWS (EC2, S3, Lambda), Docker, Kubernetes, Git, GitHub Actions, Linux, CI/CD
+- Concepts & Practices: System Design, Microservices, Agile, REST APIs, Unit Testing, TDD
+
+WORK EXPERIENCE
+
+Senior Software Engineer | CloudScale Solutions | San Francisco, CA
+June 2022 - Present
+- Architected and deployed microservices backend using FastAPI and PostgreSQL, serving over 250,000 daily active users with 99.95% uptime.
+- Optimized database query performance and implemented Redis caching, reducing average API response times by 42%.
+- Spearheaded the migration of legacy monolithic infrastructure to Docker containers and Kubernetes on AWS, cutting infrastructure costs by $35,000 annually.
+- Mentored 4 junior engineers on clean architecture, code review standards, and test-driven development.
+
+Software Engineer | NexaTech Innovations | Austin, TX
+August 2020 - May 2022
+- Developed responsive customer-facing web portals using React, TypeScript, and Redux, improving user engagement metrics by 28%.
+- Built automated CI/CD delivery pipelines with GitHub Actions, reducing deployment cycle times from 4 hours to 15 minutes.
+- Collaborated with product managers and UX designers in an Agile Scrum setting to deliver 14 high-impact feature releases ahead of deadlines.
+- Increased test coverage across core modules from 45% to 88% using pytest and Jest.
+
+EDUCATION
+Bachelor of Science in Computer Science
+University of California, Berkeley | Graduated May 2020 | GPA: 3.8/4.0
+
+PROJECTS
+- DevPulse - Real-time Developer Analytics Platform
+  Built a full-stack telemetry monitoring tool with Python, FastAPI, React, and PostgreSQL; parsed commit statistics for 50+ GitHub repositories.
+- SmartDoc - AI Document Summarizer
+  Created an automated text summarization engine using Python, Natural Language Processing, and Streamlit, serving 1,200+ monthly users.
+
+CERTIFICATIONS
+- AWS Certified Solutions Architect - Associate
+- Certified Kubernetes Administrator (CKA)

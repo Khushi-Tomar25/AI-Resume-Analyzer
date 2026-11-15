@@ -1,0 +1,461 @@
+/* =========================================================================
+   AI RESUME ANALYZER & ATS OPTIMIZER - PREMIUM SAAS STYLESHEET
+   Inspiration: Modern AI SaaS Dashboards, Linear, Raycast, and Notion
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+/* Global Design System Variables */
+:root {
+    --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Palette: Deep Navy & Purplish-Blue Accents */
+    --navy-950: #060B18;
+    --navy-900: #0B132B;
+    --navy-850: #0F172A;
+    --navy-800: #1E293B;
+    --navy-700: #334155;
+    --navy-600: #475569;
+
+    --slate-50: #F8FAFC;
+    --slate-100: #F1F5F9;
+    --slate-200: #E2E8F0;
+    --slate-300: #CBD5E1;
+
+    --brand-blue: #2563EB;
+    --brand-indigo: #4F46E5;
+    --brand-purple: #7C3AED;
+    --brand-cyan: #06B6D4;
+    --brand-teal: #0D9488;
+
+    --status-success: #10B981;
+    --status-success-bg: #ECFDF5;
+    --status-warning: #F59E0B;
+    --status-warning-bg: #FFFBEB;
+    --status-danger: #EF4444;
+    --status-danger-bg: #FEF2F2;
+
+    --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+    --card-hover-shadow: 0 12px 28px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+    --card-radius: 14px;
+}
+
+/* Base Streamlit Overrides */
+html, body, [class*="css"] {
+    font-family: var(--font-body);
+    color: var(--navy-800);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading) !important;
+    font-weight: 700 !important;
+    color: var(--navy-900) !important;
+    letter-spacing: -0.02em;
+}
+
+/* Main Container Padding */
+.main .block-container {
+    padding-top: 1.5rem !important;
+    padding-bottom: 3.5rem !important;
+    max-width: 1240px;
+}
+
+/* Hide Streamlit default branding elements cleanly */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header[data-testid="stHeader"] {
+    background: transparent !important;
+}
+
+/* =========================================================================
+   1. SAAS HERO & BANNER COMPONENTS
+   ========================================================================= */
+.saas-hero {
+    background: linear-gradient(135deg, #0B132B 0%, #1E1B4B 40%, #1E3A8A 80%, #2563EB 100%);
+    border-radius: 18px;
+    padding: 42px 40px;
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 28px;
+    box-shadow: 0 15px 35px -5px rgba(15, 23, 42, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.saas-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #93C5FD;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    margin-bottom: 16px;
+}
+
+.saas-hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin: 0 0 12px 0;
+    color: #FFFFFF !important;
+    letter-spacing: -0.03em;
+}
+
+.saas-hero-desc {
+    font-size: 1.1rem;
+    color: #E2E8F0;
+    max-width: 720px;
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+    font-weight: 400;
+}
+
+/* =========================================================================
+   2. SAAS CARD SYSTEM & METRICS
+   ========================================================================= */
+.saas-card {
+    background: #FFFFFF;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--card-radius);
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.saas-card:hover {
+    box-shadow: var(--card-hover-shadow);
+    border-color: var(--slate-300);
+}
+
+.saas-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.saas-card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--navy-900);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Metric Display Cards */
+.saas-metric-box {
+    background: #FFFFFF;
+    border: 1px solid var(--slate-200);
+    border-radius: 14px;
+    padding: 22px 18px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.saas-metric-box:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-hover-shadow);
+    border-color: #CBD5E1;
+}
+
+.saas-metric-val {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.saas-metric-lbl {
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--navy-600);
+    margin-top: 6px;
+}
+
+/* Feature Showcase Grid Cards (Home Dashboard) */
+.feature-card {
+    background: #FFFFFF;
+    border: 1px solid var(--slate-200);
+    border-radius: 14px;
+    padding: 24px 20px;
+    height: 100%;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease;
+    border-top: 3px solid var(--brand-blue);
+}
+
+.feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-hover-shadow);
+    border-top-color: var(--brand-indigo);
+}
+
+.feature-icon {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.feature-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--navy-900);
+    margin: 0 0 8px 0;
+}
+
+.feature-desc {
+    font-size: 0.9rem;
+    color: var(--navy-600);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Step Card (How It Works) */
+.step-card {
+    background: var(--slate-50);
+    border: 1px solid var(--slate-200);
+    border-radius: 14px;
+    padding: 22px;
+    text-align: left;
+    position: relative;
+    height: 100%;
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--brand-indigo);
+    color: #FFFFFF;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+/* =========================================================================
+   3. SKILL PILLS & STATUS BADGES
+   ========================================================================= */
+.skill-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 9999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin: 3px 4px;
+    transition: all 0.15s ease;
+}
+
+.skill-neutral {
+    background-color: var(--slate-100);
+    color: var(--navy-800);
+    border: 1px solid var(--slate-300);
+}
+
+.skill-matched {
+    background-color: #ECFDF5;
+    color: #065F46;
+    border: 1px solid #A7F3D0;
+}
+
+.skill-missing {
+    background-color: #FEF2F2;
+    color: #991B1B;
+    border: 1px solid #FECACA;
+}
+
+/* Status Badges */
+.badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.badge-excellent {
+    background: #ECFDF5;
+    color: #047857;
+    border: 1px solid #6EE7B7;
+}
+
+.badge-good {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    border: 1px solid #93C5FD;
+}
+
+.badge-average {
+    background: #FFFBEB;
+    color: #B45309;
+    border: 1px solid #FCD34D;
+}
+
+.badge-poor {
+    background: #FEF2F2;
+    color: #B91C1C;
+    border: 1px solid #FCA5A5;
+}
+
+/* =========================================================================
+   4. NOTICE BANNERS & CHECKLIST ITEMS
+   ========================================================================= */
+.alert-box {
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    border: 1px solid transparent;
+}
+
+.alert-info {
+    background-color: #EFF6FF;
+    border-color: #BFDBFE;
+    color: #1E40AF;
+}
+
+.alert-warning {
+    background-color: #FFFBEB;
+    border-color: #FDE68A;
+    color: #92400E;
+}
+
+.alert-danger {
+    background-color: #FEF2F2;
+    border-color: #FECACA;
+    color: #991B1B;
+}
+
+.alert-success {
+    background-color: #ECFDF5;
+    border-color: #A7F3D0;
+    color: #065F46;
+}
+
+/* Check items */
+.check-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
+/* =========================================================================
+   5. SIDEBAR STYLING
+   ========================================================================= */
+section[data-testid="stSidebar"] {
+    background-color: #0B132B !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+section[data-testid="stSidebar"] * {
+    color: #E2E8F0 !important;
+}
+
+section[data-testid="stSidebar"] hr {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Navigation items in sidebar */
+div[data-testid="stRadio"] > div {
+    gap: 4px;
+}
+
+div[data-testid="stRadio"] label {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 10px 14px !important;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 4px;
+}
+
+div[data-testid="stRadio"] label:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--brand-blue);
+}
+
+/* Streamlit Button Styling */
+.stButton > button {
+    border-radius: 10px !important;
+    font-family: var(--font-heading) !important;
+    font-weight: 600 !important;
+    padding: 0.5rem 1.25rem !important;
+    transition: all 0.2s ease !important;
+    border: 1px solid var(--slate-300) !important;
+}
+
+.stButton > button[kind="primary"] {
+    background: linear-gradient(135deg, #2563EB 0%, #4F46E5 100%) !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+}
+
+.stButton > button[kind="primary"]:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45) !important;
+}
+
+/* File Uploader SaaS Styling */
+div[data-testid="stFileUploader"] {
+    background: #FFFFFF;
+    border: 2px dashed #CBD5E1;
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+div[data-testid="stFileUploader"]:hover {
+    border-color: var(--brand-blue);
+    background: var(--slate-50);
+}
+
+/* Modern Footer */
+.saas-footer {
+    border-top: 1px solid var(--slate-200);
+    padding: 28px 0 10px 0;
+    margin-top: 48px;
+    text-align: center;
+    color: var(--navy-600);
+    font-size: 0.88rem;
+}
+
+.saas-footer-badge {
+    display: inline-block;
+    background: var(--slate-100);
+    color: var(--navy-700);
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 0 4px;
+}

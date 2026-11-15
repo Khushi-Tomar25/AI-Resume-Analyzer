@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Environment Variables & Secrets
+.env
+!.env.example
+
+# Database
+*.db
+*.sqlite3
+data/*.db
+
+# Generated Reports (keep .gitkeep)
+reports/*.pdf
+reports/*.docx
+!reports/.gitkeep
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Streamlit Local Cache (keep config.toml)
+.streamlit/*
+!.streamlit/config.toml
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+desktop.ini

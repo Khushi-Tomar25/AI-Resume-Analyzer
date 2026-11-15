@@ -1,0 +1,30 @@
+Priya Sharma
+priya.sharma@email.com | 9876543210 | Bangalore, India
+https://linkedin.com/in/priyasharma-cs | https://github.com/priyasharma-code
+
+CAREER OBJECTIVE
+Enthusiastic and motivated Computer Science graduate seeking an entry-level Software Developer position to utilize programming skills in Python and web technologies while contributing to company goals.
+
+EDUCATION
+Bachelor of Technology in Computer Science and Engineering
+National Institute of Technology | 2020 - 2024 | CGPA: 8.4/10
+
+TECHNICAL SKILLS
+- Languages: Python, Java, C++, HTML, CSS, JavaScript, SQL
+- Frameworks: Flask, React, Bootstrap
+- Tools: Git, VS Code, MySQL, Linux
+
+PROJECTS
+- E-Commerce Web Application:
+  Created a web application for online shopping using Flask and MySQL. Implemented user registration, product catalog, and shopping cart features.
+- Student Management System:
+  Developed a desktop system in Python with SQLite database to maintain student records, attendance, and exam scores.
+
+INTERNSHIP
+Web Development Intern | TechCorp India | June 2023 - August 2023
+- Worked on frontend bug fixes and updated responsive layouts using HTML, CSS, and JavaScript.
+- Assisted senior engineers with database queries and API testing.
+
+EXTRACURRICULAR ACTIVITIES
+- Active volunteer in the College Coding Club; organized annual hackathon.
+- Participated in multiple collegiate competitive programming contests.

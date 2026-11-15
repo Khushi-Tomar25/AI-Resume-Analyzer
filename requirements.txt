@@ -1,0 +1,31 @@
+# AI-Powered Resume Analyzer - Dependencies
+# Tested for stability and cross-platform compatibility (Windows, Linux, macOS)
+
+# Frontend & UI
+streamlit>=1.35.0
+altair>=5.0.0
+pillow>=10.0.0
+
+# AI Integration
+anthropic>=0.28.0
+
+# Document & Resume Parsing
+pymupdf>=1.24.0
+python-docx>=1.1.0
+pypdf>=4.2.0
+
+# Data Processing & Numerical Operations
+pandas>=2.2.0
+numpy>=1.26.0
+
+# NLP & Machine Learning
+scikit-learn>=1.4.0
+
+# PDF Report Generation
+reportlab>=4.2.0
+
+# Environment Management
+python-dotenv>=1.0.0
+
+# Testing Framework
+pytest>=8.0.0
