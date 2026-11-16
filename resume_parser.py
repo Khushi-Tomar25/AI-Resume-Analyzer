@@ -225,11 +225,29 @@ class ResumeParser:
         """
         # Convert source to bytes
         data_bytes = b""
-        if isinstance(file_source, (str, Path)):
+        if isinstance(file_source, Path):
             with open(file_source, "rb") as f:
                 data_bytes = f.read()
             if not file_name:
-                file_name = os.path.basename(str(file_source))
+                file_name = file_source.name
+        elif isinstance(file_source, str):
+            is_path = False
+            if "\n" not in file_source and "\r" not in file_source:
+                try:
+                    if os.path.isfile(file_source):
+                        is_path = True
+                except Exception:
+                    is_path = False
+            
+            if is_path:
+                with open(file_source, "rb") as f:
+                    data_bytes = f.read()
+                if not file_name:
+                    file_name = os.path.basename(file_source)
+            else:
+                data_bytes = file_source.encode("utf-8")
+                if not file_name:
+                    file_name = "resume.txt"
         elif isinstance(file_source, io.BytesIO):
             data_bytes = file_source.getvalue()
         elif isinstance(file_source, bytes):

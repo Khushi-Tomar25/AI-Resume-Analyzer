@@ -209,35 +209,47 @@ with st.sidebar:
         if st.button("Dev Resume", use_container_width=True, help="Load Alex Morgan (Full Stack Engineer)"):
             sample_file = SAMPLE_RESUMES_DIR / "software_engineer_resume.txt"
             if sample_file.exists():
-                with open(sample_file, "r", encoding="utf-8") as f:
-                    content = f.read()
-                parsed = parse_resume(content, "software_engineer_resume.txt")
-                st.session_state["parsed_resume"] = parsed
-                st.session_state["ats_results"] = calculate_ats_score(parsed)
-                st.session_state["current_file_name"] = "software_engineer_resume.txt"
-                st.session_state["job_match_results"] = None
-                st.session_state["ai_critique"] = None
-                st.session_state["deep_analysis"] = None
-                st.session_state["resume_improvements"] = None
-                st.session_state["current_nav"] = "Resume Analyzer"
-                st.rerun()
+                try:
+                    parsed = parse_resume(sample_file.read_bytes(), sample_file.name)
+                    if parsed.get("parsing_status") == "error":
+                        st.error(f"Failed to parse sample resume: {parsed.get('error_message')}")
+                    else:
+                        st.session_state["parsed_resume"] = parsed
+                        st.session_state["ats_results"] = calculate_ats_score(parsed)
+                        st.session_state["current_file_name"] = sample_file.name
+                        st.session_state["job_match_results"] = None
+                        st.session_state["ai_critique"] = None
+                        st.session_state["deep_analysis"] = None
+                        st.session_state["resume_improvements"] = None
+                        st.session_state["current_nav"] = "Resume Analyzer"
+                        st.rerun()
+                except Exception as e:
+                    st.error(f"Error loading Dev resume: {e}")
+            else:
+                st.error(f"Dev resume file '{sample_file.name}' not found at: {sample_file}")
 
     with col_sb2:
         if st.button("Fresher Resume", use_container_width=True, help="Load Priya Sharma (CS Graduate)"):
             sample_file = SAMPLE_RESUMES_DIR / "fresher_resume.txt"
             if sample_file.exists():
-                with open(sample_file, "r", encoding="utf-8") as f:
-                    content = f.read()
-                parsed = parse_resume(content, "fresher_resume.txt")
-                st.session_state["parsed_resume"] = parsed
-                st.session_state["ats_results"] = calculate_ats_score(parsed)
-                st.session_state["current_file_name"] = "fresher_resume.txt"
-                st.session_state["job_match_results"] = None
-                st.session_state["ai_critique"] = None
-                st.session_state["deep_analysis"] = None
-                st.session_state["resume_improvements"] = None
-                st.session_state["current_nav"] = "Resume Analyzer"
-                st.rerun()
+                try:
+                    parsed = parse_resume(sample_file.read_bytes(), sample_file.name)
+                    if parsed.get("parsing_status") == "error":
+                        st.error(f"Failed to parse sample resume: {parsed.get('error_message')}")
+                    else:
+                        st.session_state["parsed_resume"] = parsed
+                        st.session_state["ats_results"] = calculate_ats_score(parsed)
+                        st.session_state["current_file_name"] = sample_file.name
+                        st.session_state["job_match_results"] = None
+                        st.session_state["ai_critique"] = None
+                        st.session_state["deep_analysis"] = None
+                        st.session_state["resume_improvements"] = None
+                        st.session_state["current_nav"] = "Resume Analyzer"
+                        st.rerun()
+                except Exception as e:
+                    st.error(f"Error loading Fresher resume: {e}")
+            else:
+                st.error(f"Fresher resume file '{sample_file.name}' not found at: {sample_file}")
 
     # Reset Workspace
     if st.button("🔄 Reset Workspace", use_container_width=True):
@@ -284,13 +296,23 @@ if current_page == "Home":
          if st.button("📂 Load Demo Resume", use_container_width=True):
             sample_file = SAMPLE_RESUMES_DIR / "software_engineer_resume.txt"
             if sample_file.exists():
-                with open(sample_file, "r", encoding="utf-8") as f:
-                    content = f.read()
-                p = parse_resume(content, "software_engineer_resume.txt")
-                st.session_state["parsed_resume"] = p
-                st.session_state["ats_results"] = calculate_ats_score(p)
-                st.session_state["current_file_name"] = "software_engineer_resume.txt"
-                navigate_to("Resume Analyzer")
+                try:
+                    p = parse_resume(sample_file.read_bytes(), sample_file.name)
+                    if p.get("parsing_status") == "error":
+                        st.error(f"Failed to parse demo resume: {p.get('error_message')}")
+                    else:
+                        st.session_state["parsed_resume"] = p
+                        st.session_state["ats_results"] = calculate_ats_score(p)
+                        st.session_state["current_file_name"] = sample_file.name
+                        st.session_state["job_match_results"] = None
+                        st.session_state["ai_critique"] = None
+                        st.session_state["deep_analysis"] = None
+                        st.session_state["resume_improvements"] = None
+                        navigate_to("Resume Analyzer")
+                except Exception as e:
+                    st.error(f"Error loading demo resume: {e}")
+            else:
+                st.error(f"Demo resume file '{sample_file.name}' not found at: {sample_file}")
 
     st.markdown("<br><hr><br>", unsafe_allow_html=True)
 

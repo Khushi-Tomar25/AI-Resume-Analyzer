@@ -116,3 +116,29 @@ def test_corrupted_docx_validation():
     res = parser.parse(b"This is not a real docx archive", file_name="broken.docx")
     assert res["parsing_status"] == "error"
     assert "corrupted" in res["error_message"].lower()
+
+
+def test_parse_sample_txt_bytes():
+    txt_path = SAMPLE_DIR / "software_engineer_resume.txt"
+    if txt_path.exists():
+        result = parse_resume(txt_path.read_bytes(), file_name=txt_path.name)
+        assert result["candidate_name"] == "Alex Morgan"
+        assert result["parsing_status"] == "success"
+        assert len(result["clean_text"]) > 100
+
+
+def test_parse_fresher_txt_bytes():
+    txt_path = SAMPLE_DIR / "fresher_resume.txt"
+    if txt_path.exists():
+        result = parse_resume(txt_path.read_bytes(), file_name=txt_path.name)
+        assert result["candidate_name"] == "Priya Sharma"
+        assert result["parsing_status"] == "success"
+        assert len(result["clean_text"]) > 100
+
+
+def test_parse_raw_text_string_no_file_not_found():
+    raw_content = "John Doe\njohn@example.com\n\nSUMMARY\nSoftware Engineer with experience."
+    result = parse_resume(raw_content, file_name="sample.txt")
+    assert result["candidate_name"] == "John Doe"
+    assert result["parsing_status"] == "success"
+    assert "Software Engineer" in result["clean_text"]
