@@ -206,7 +206,7 @@ with st.sidebar:
     st.markdown("<p style='font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:#94A3B8; margin-bottom:8px;'>📂 Instant Test Samples</p>", unsafe_allow_html=True)
     col_sb1, col_sb2 = st.columns(2)
     with col_sb1:
-    if st.button("Dev Resume", use_container_width=True, help="Load Alex Morgan (Full Stack Engineer)"):
+        if st.button("Dev Resume", use_container_width=True, help="Load Alex Morgan (Full Stack Engineer)"):
             sample_file = SAMPLE_RESUMES_DIR / "software_engineer_resume.txt"
             if sample_file.exists():
                 with open(sample_file, "r", encoding="utf-8") as f:
