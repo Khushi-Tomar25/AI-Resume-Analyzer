@@ -206,38 +206,44 @@ with st.sidebar:
     st.markdown("<p style='font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:#94A3B8; margin-bottom:8px;'>📂 Instant Test Samples</p>", unsafe_allow_html=True)
     col_sb1, col_sb2 = st.columns(2)
     with col_sb1:
-        if st.button("Dev Resume", use_container_width=True, help="Load Alex Morgan (Full Stack Engineer)"):
-            sample_file = SAMPLE_RESUMES_DIR / "software_engineer_resume.txt"
-            if sample_file.exists():
-                with open(sample_file, "r", encoding="utf-8") as f:
-                    content = f.read()
-                parsed = parse_resume(content, "software_engineer_resume.txt")
-                st.session_state["parsed_resume"] = parsed
-                st.session_state["ats_results"] = calculate_ats_score(parsed)
-                st.session_state["current_file_name"] = "software_engineer_resume.txt"
-                st.session_state["job_match_results"] = None
-                st.session_state["ai_critique"] = None
-                st.session_state["deep_analysis"] = None
-                st.session_state["resume_improvements"] = None
-                st.session_state["current_nav"] = "Resume Analyzer"
-                st.rerun()
+   if st.button("Dev Resume", use_container_width=True):
+    sample_file = SAMPLE_RESUMES_DIR / "software_engineer_resume.txt"
+
+    if sample_file.exists():
+        parsed = parse_resume(
+            sample_file.read_bytes(),
+            sample_file.name
+        )
+
+        st.session_state["parsed_resume"] = parsed
+        st.session_state["ats_results"] = calculate_ats_score(parsed)
+        st.session_state["current_file_name"] = sample_file.name
+        st.session_state["job_match_results"] = None
+        st.session_state["ai_critique"] = None
+        st.session_state["deep_analysis"] = None
+        st.session_state["resume_improvements"] = None
+        st.session_state["current_nav"] = "Resume Analyzer"
+        st.rerun()
 
     with col_sb2:
-        if st.button("Fresher Resume", use_container_width=True, help="Load Priya Sharma (CS Graduate)"):
-            sample_file = SAMPLE_RESUMES_DIR / "fresher_resume.txt"
-            if sample_file.exists():
-                with open(sample_file, "r", encoding="utf-8") as f:
-                    content = f.read()
-                parsed = parse_resume(content, "fresher_resume.txt")
-                st.session_state["parsed_resume"] = parsed
-                st.session_state["ats_results"] = calculate_ats_score(parsed)
-                st.session_state["current_file_name"] = "fresher_resume.txt"
-                st.session_state["job_match_results"] = None
-                st.session_state["ai_critique"] = None
-                st.session_state["deep_analysis"] = None
-                st.session_state["resume_improvements"] = None
-                st.session_state["current_nav"] = "Resume Analyzer"
-                st.rerun()
+     if st.button("Fresher Resume", use_container_width=True):
+    sample_file = SAMPLE_RESUMES_DIR / "fresher_resume.txt"
+
+    if sample_file.exists():
+        parsed = parse_resume(
+            sample_file.read_bytes(),
+            sample_file.name
+        )
+
+        st.session_state["parsed_resume"] = parsed
+        st.session_state["ats_results"] = calculate_ats_score(parsed)
+        st.session_state["current_file_name"] = sample_file.name
+        st.session_state["job_match_results"] = None
+        st.session_state["ai_critique"] = None
+        st.session_state["deep_analysis"] = None
+        st.session_state["resume_improvements"] = None
+        st.session_state["current_nav"] = "Resume Analyzer"
+        st.rerun()
 
     # Reset Workspace
     if st.button("🔄 Reset Workspace", use_container_width=True):
@@ -282,15 +288,27 @@ if current_page == "Home":
             navigate_to("Resume Analyzer")
     with col_cta2:
         if st.button("📂 Load Demo Resume", use_container_width=True):
-            sample_file = SAMPLE_RESUMES_DIR / "software_engineer_resume.txt"
-            if sample_file.exists():
-                with open(sample_file, "r", encoding="utf-8") as f:
-                    content = f.read()
-                p = parse_resume(content, "software_engineer_resume.txt")
-                st.session_state["parsed_resume"] = p
-                st.session_state["ats_results"] = calculate_ats_score(p)
-                st.session_state["current_file_name"] = "software_engineer_resume.txt"
-                navigate_to("Resume Analyzer")
+    sample_file = SAMPLE_RESUMES_DIR / "software_engineer_resume.txt"
+
+    if sample_file.exists():
+        p = parse_resume(
+            sample_file.read_bytes(),
+            sample_file.name
+        )
+
+        if p["parsing_status"] == "error":
+            st.error(f"Resume parsing failed: {p['error_message']}")
+        else:
+            st.session_state["parsed_resume"] = p
+            st.session_state["ats_results"] = calculate_ats_score(p)
+            st.session_state["current_file_name"] = sample_file.name
+            st.session_state["job_match_results"] = None
+            st.session_state["ai_critique"] = None
+            st.session_state["deep_analysis"] = None
+            st.session_state["resume_improvements"] = None
+            navigate_to("Resume Analyzer")
+    else:
+        st.error("Demo resume file not found.")
 
     st.markdown("<br><hr><br>", unsafe_allow_html=True)
 
