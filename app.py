@@ -223,7 +223,7 @@ with st.sidebar:
                 st.rerun()
 
     with col_sb2:
-    if st.button("Fresher Resume", use_container_width=True, help="Load Priya Sharma (CS Graduate)"):
+        if st.button("Fresher Resume", use_container_width=True, help="Load Priya Sharma (CS Graduate)"):
             sample_file = SAMPLE_RESUMES_DIR / "fresher_resume.txt"
             if sample_file.exists():
                 with open(sample_file, "r", encoding="utf-8") as f:
